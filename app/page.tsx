@@ -31,7 +31,7 @@ export default function Home() {
           <video
             className="w-full rounded-2xl shadow-2xl"
             controls
-            poster="/v1_screens/v1_main_screen.png"
+            poster="/v1_screens/v1_home_screen.png"
           >
             <source src="/v1_screens/v1_show.mp4" type="video/mp4" />
           </video>
