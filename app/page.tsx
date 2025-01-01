@@ -174,6 +174,61 @@ export default function Home() {
               with no code ever being uploaded to the cloud.
             </p>
           </div>
+
+          {/* New Feature - Keyboard Shortcuts */}
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-gray-900 text-center">
+              Efficient Keyboard Shortcuts
+            </h2>
+            <div className="max-w-[1400px] mx-auto bg-white rounded-2xl shadow-xl p-8 space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-gray-900 text-center mb-8">
+                  Navigate Like a Pro
+                </h3>
+                
+                {/* File Tree Navigation */}
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="space-y-1">
+                    <p className="text-lg font-medium text-gray-900">File Tree Navigation</p>
+                    <p className="text-gray-600">Quick navigation through files in diff view</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">↑</kbd>
+                    <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">↓</kbd>
+                  </div>
+                </div>
+
+                {/* Previous Commit */}
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="space-y-1">
+                    <p className="text-lg font-medium text-gray-900">Previous Commit</p>
+                    <p className="text-gray-600">Jump to the previous commit</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">⌘</kbd>
+                    <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">↑</kbd>
+                  </div>
+                </div>
+
+                {/* Next Commit */}
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="space-y-1">
+                    <p className="text-lg font-medium text-gray-900">Next Commit</p>
+                    <p className="text-gray-600">Jump to the next commit</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">⌘</kbd>
+                    <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">↓</kbd>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mt-8">
+                Designed for efficiency, GitTrace offers intuitive keyboard shortcuts 
+                that make navigation and commit browsing feel natural and fast.
+              </p>
+            </div>
+          </div>
         </div>
       </main>
 
