@@ -221,13 +221,37 @@ export default function Home() {
                     <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">↓</kbd>
                   </div>
                 </div>
-              </div>
 
-              <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mt-8">
-                Designed for efficiency, GitTrace offers intuitive keyboard shortcuts 
-                that make navigation and commit browsing feel natural and fast.
-              </p>
+                {/* Quick Search */}
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="space-y-1">
+                    <p className="text-lg font-medium text-gray-900">Quick Search</p>
+                    <p className="text-gray-600 text-left">Search commits by author name or hash or commit message</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <kbd className="px-3 py-1 bg-white rounded-lg shadow text-sm font-mono">Enter</kbd>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div className="mb-32">
+              <video
+                className="w-full rounded-2xl shadow-2xl"
+                controls
+                poster="/v1_screens/v1_home_screen.png"
+              >
+                <source src="/v1_screens/v1_shortcuts_demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+        
+            <p className="text-xl text-gray-600 text-left">
+              Designed for efficiency, GitTrace offers intuitive keyboard shortcuts 
+              that make navigation and commit browsing feel natural and fast. 
+              Branch history automatically updates when switching branches, and commit 
+              search activates instantly with Enter key.
+            </p>
+
           </div>
         </div>
       </main>
