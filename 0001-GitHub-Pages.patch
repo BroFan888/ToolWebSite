@@ -1,0 +1,87 @@
+From c8396d7d6ae90b192077e281a5ee5b89945fa749 Mon Sep 17 00:00:00 2001
+From: fanmingyang <1056218492@qq.com>
+Date: Wed, 1 Jan 2025 13:24:31 +0800
+Subject: [PATCH 1/2] =?UTF-8?q?=E6=B7=BB=E5=8A=A0=20GitHub=20Pages=20?=
+ =?UTF-8?q?=E9=83=A8=E7=BD=B2=E9=85=8D=E7=BD=AE?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ .github/workflows/deploy.yml | 29 +++++++++++++++++++++++++++++
+ next.config.js               | 10 ++++++++++
+ package.json                 |  3 ++-
+ 3 files changed, 41 insertions(+), 1 deletion(-)
+ create mode 100644 .github/workflows/deploy.yml
+ create mode 100644 next.config.js
+
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+new file mode 100644
+index 0000000..87bf4e9
+--- /dev/null
++++ b/.github/workflows/deploy.yml
+@@ -0,0 +1,29 @@
++name: Deploy to GitHub Pages
++
++on:
++  push:
++    branches: [ main ]
++
++jobs:
++  build-and-deploy:
++    runs-on: ubuntu-latest
++
++    steps:
++    - uses: actions/checkout@v2
++
++    - name: Setup Node.js
++      uses: actions/setup-node@v2
++      with:
++        node-version: '18'
++
++    - name: Install dependencies
++      run: npm install
++
++    - name: Build
++      run: npm run build
++
++    - name: Deploy
++      uses: peaceiris/actions-gh-pages@v3
++      with:
++        github_token: ${{ secrets.GITHUB_TOKEN }}
++        publish_dir: ./out 
+\ No newline at end of file
+diff --git a/next.config.js b/next.config.js
+new file mode 100644
+index 0000000..9dec9b9
+--- /dev/null
++++ b/next.config.js
+@@ -0,0 +1,10 @@
++/** @type {import('next').NextConfig} */
++const nextConfig = {
++  output: 'export',  // 启用静态导出
++  images: {
++    unoptimized: true, // GitHub Pages 不支持 Next.js 的图片优化
++  },
++  basePath: '/REPO', // 替换 REPO 为你的仓库名
++}
++
++module.exports = nextConfig 
+\ No newline at end of file
+diff --git a/package.json b/package.json
+index c38bdda..e821283 100644
+--- a/package.json
++++ b/package.json
+@@ -6,7 +6,8 @@
+     "dev": "next dev --turbopack",
+     "build": "next build",
+     "start": "next start",
+-    "lint": "next lint"
++    "lint": "next lint",
++    "export": "next build && next export"
+   },
+   "dependencies": {
+     "@tailwindcss/aspect-ratio": "^0.4.2",
+-- 
+2.39.5 (Apple Git-154)
+

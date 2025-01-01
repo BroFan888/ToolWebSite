@@ -1,0 +1,30 @@
+From 3ff37daffcfc3685dfb7af94858b40a0a46a8020 Mon Sep 17 00:00:00 2001
+From: fanmingyang <1056218492@qq.com>
+Date: Wed, 1 Jan 2025 13:31:43 +0800
+Subject: [PATCH 2/2] =?UTF-8?q?=E6=9B=B4=E6=96=B0=20GitHub=20Actions=20?=
+ =?UTF-8?q?=E6=9D=83=E9=99=90=E9=85=8D=E7=BD=AE?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ .github/workflows/deploy.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 87bf4e9..d2b566b 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -4,6 +4,9 @@ on:
+   push:
+     branches: [ main ]
+ 
++permissions:
++  contents: write
++
+ jobs:
+   build-and-deploy:
+     runs-on: ubuntu-latest
+-- 
+2.39.5 (Apple Git-154)
+
