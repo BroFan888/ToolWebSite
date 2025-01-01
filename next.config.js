@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // GitHub Pages 不支持 Next.js 的图片优化
   },
-  basePath: '/REPO', // 替换 REPO 为你的仓库名
+  basePath: '/ToolWebSite', // 确保这里的名称与你的仓库名完全匹配，区分大小写
 }
 
 module.exports = nextConfig 
